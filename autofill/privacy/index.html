@@ -11,57 +11,124 @@
 <body>
   <header class="hero">
     <div class="wrap">
-      <img src="../../assets/autofill-128.png" alt="">
-      <div>
-        <h1>Privacy policy: Pebble Autofill</h1>
-        <p>Effective 2 November 2026 · <a href="../../">All Pebble extensions</a></p>
+      <div class="brand"><img src="../../assets/pebble-128.png" alt=""><a href="../../">Pebble extensions</a></div>
+      <div class="title">
+        <img src="../../assets/autofill-128.png" alt="">
+        <div>
+          <div class="kicker">Privacy policy</div>
+          <h1>Pebble Autofill</h1>
+          <p>Effective 2 November 2026 · Anda Tech Solutions SRL</p>
+        </div>
       </div>
     </div>
   </header>
   <main>
     <div class="wrap">
+      <div class="glance">
+        <div class="tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 14h5"/></svg>
+          <strong>Stays in your browser</strong>
+          <span>Profiles and rules live in Chrome's storage. Nothing is uploaded.</span>
+        </div>
+        <div class="tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M9.9 5.1A10.4 10.4 0 0 1 12 5c5 0 9 4 10 7a11.6 11.6 0 0 1-2.6 3.8M6.2 6.2A11.7 11.7 0 0 0 2 12c1 3 5 7 10 7a9.8 9.8 0 0 0 4-.8"/></svg>
+          <strong>No analytics, no tracking</strong>
+          <span>No telemetry, no crash reports, no form data sent anywhere.</span>
+        </div>
+        <div class="tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20M6 15h4"/></svg>
+          <strong>One-time purchase</strong>
+          <span>Pro is paid once, through ExtensionPay and Stripe. We never see your card.</span>
+        </div>
+      </div>
+
       <p class="summary"><strong>Pebble Autofill does not collect, transmit, sell or share any personal data.</strong> Everything you type into it stays in your browser. The developer never receives your profiles, your rules or the contents of any form.</p>
 
-      <h2>What the extension stores</h2>
-      <p>Profiles (name, email, phone, address and any custom fields you add), fill rules and settings are stored only in your browser, using Chrome's extension storage. If you have Chrome sync turned on, Chrome syncs them between your own browsers under your Google account, the same way it syncs bookmarks. That transfer is done by Google, not by us, and we have no access to it.</p>
-      <p>The extension also stores a flag saying whether Pro has been purchased, and a random identifier created by ExtensionPay on install (see Purchases below).</p>
+      <div class="section">
+        <div class="num">1</div>
+        <div>
+          <h2>What the extension stores</h2>
+          <p>Profiles (name, email, phone, address and any custom fields you add), fill rules and settings are stored only in your browser, using Chrome's extension storage. If you have Chrome sync turned on, Chrome syncs them between your own browsers under your Google account, the same way it syncs bookmarks. That transfer is done by Google, not by us, and we have no access to it.</p>
+          <p>The extension also stores a flag saying whether Pro has been purchased, and a random identifier created by ExtensionPay on install (see Purchases below).</p>
+        </div>
+      </div>
 
-      <h2>What the extension sends</h2>
-      <p>Nothing about you. The extension has no analytics, no telemetry and no crash reporting. Form contents are never sent anywhere. The only network requests it makes are to <a href="https://extensionpay.com">extensionpay.com</a>, to check whether Pro has been bought.</p>
+      <div class="section">
+        <div class="num">2</div>
+        <div>
+          <h2>What the extension sends</h2>
+          <p>Nothing about you. The extension has no analytics, no telemetry and no crash reporting. Form contents are never sent anywhere. The only network requests it makes are to <a href="https://extensionpay.com">extensionpay.com</a>, to check whether Pro has been bought.</p>
+        </div>
+      </div>
 
-      <h2>When the extension reads a page</h2>
-      <p>The extension reads the fields of a page only when you trigger a fill: by clicking <em>Fill this page</em>, using the keyboard shortcut, or choosing a profile from the right-click menu. On sites you explicitly add under <em>Auto-fill on page load</em>, it also fills empty fields when such a page opens. Chrome asks you to allow each site when you add it. The extension has no access to other sites.</p>
-      <p>It never fills password, one-time code, CAPTCHA, card number or security code fields, even if a profile or rule would match them.</p>
+      <div class="section">
+        <div class="num">3</div>
+        <div>
+          <h2>When the extension reads a page</h2>
+          <p>The extension reads the fields of a page only when you trigger a fill: by clicking <em>Fill this page</em>, using the keyboard shortcut, or choosing a profile from the right-click menu. On sites you explicitly add under <em>Auto-fill on page load</em>, it also fills empty fields when such a page opens. Chrome asks you to allow each site when you add it. The extension has no access to other sites.</p>
+          <p>It never fills password, one-time code, CAPTCHA, card number or security code fields, even if a profile or rule would match them.</p>
+        </div>
+      </div>
 
-      <h2>Permissions</h2>
-      <table>
-        <tr><th>Permission</th><th>Why</th></tr>
-        <tr><td>storage</td><td>Keep your profiles, rules and settings in the browser.</td></tr>
-        <tr><td>activeTab, scripting</td><td>Read and fill the fields of the page you are on, only when you trigger a fill.</td></tr>
-        <tr><td>contextMenus</td><td>Offer your profiles in the right-click menu.</td></tr>
-        <tr><td>Site access (optional)</td><td>Requested per site, only for sites you add to auto-fill on page load.</td></tr>
-        <tr><td>extensionpay.com</td><td>A small script on ExtensionPay's own pages lets the extension learn that a purchase has completed.</td></tr>
-      </table>
+      <div class="section">
+        <div class="num">4</div>
+        <div>
+          <h2>Permissions</h2>
+          <table>
+            <tr><th>Permission</th><th>Why</th></tr>
+            <tr><td><code>storage</code></td><td>Keep your profiles, rules and settings in the browser.</td></tr>
+            <tr><td><code>activeTab</code> <code>scripting</code></td><td>Read and fill the fields of the page you are on, only when you trigger a fill.</td></tr>
+            <tr><td><code>contextMenus</code></td><td>Offer your profiles in the right-click menu.</td></tr>
+            <tr><td><code>site access</code></td><td>Optional, requested per site, only for sites you add to auto-fill on page load.</td></tr>
+            <tr><td><code>extensionpay.com</code></td><td>A small script on ExtensionPay's own pages lets the extension learn that a purchase has completed.</td></tr>
+          </table>
+        </div>
+      </div>
 
-      <h2>Purchases</h2>
-      <p>Pro is sold by Anda Tech Solutions SRL, the developer, not by Google. To check whether you purchased Pro, the extension contacts ExtensionPay using an anonymous random identifier created on install. If you buy Pro, checkout happens on ExtensionPay's and Stripe's pages, which collect the email address and payment details needed to process and restore the purchase, under their own privacy policies (ExtensionPay, and <a href="https://stripe.com/privacy">Stripe</a>). The extension itself never sees your card details.</p>
+      <div class="section">
+        <div class="num">5</div>
+        <div>
+          <h2>Purchases</h2>
+          <p>Pro is sold by Anda Tech Solutions SRL, the developer, not by Google. To check whether you purchased Pro, the extension contacts ExtensionPay using an anonymous random identifier created on install. If you buy Pro, checkout happens on ExtensionPay's and Stripe's pages, which collect the email address and payment details needed to process and restore the purchase, under their own privacy policies (ExtensionPay, and <a href="https://stripe.com/privacy">Stripe</a>). The extension itself never sees your card details.</p>
+        </div>
+      </div>
 
-      <h2>Your data, your control</h2>
-      <p>You can export your profiles and rules to a file, edit or delete them at any time from the extension's settings, and remove everything by uninstalling the extension. Because nothing is stored on our side, there is nothing for us to delete or hand over.</p>
+      <div class="section">
+        <div class="num">6</div>
+        <div>
+          <h2>Your data, your control</h2>
+          <p>You can export your profiles and rules to a file, edit or delete them at any time from the extension's settings, and remove everything by uninstalling the extension. Because nothing is stored on our side, there is nothing for us to delete or hand over.</p>
+        </div>
+      </div>
 
-      <h2>Children</h2>
-      <p>The extension is not directed at children under 13 and collects no data from anyone.</p>
+      <div class="section">
+        <div class="num">7</div>
+        <div>
+          <h2>Children</h2>
+          <p>The extension is not directed at children under 13 and collects no data from anyone.</p>
+        </div>
+      </div>
 
-      <h2>Changes</h2>
-      <p>If this policy changes, the new version will be published at this address with a new effective date. Changes that affect how data is handled will also be noted in the extension's release notes.</p>
+      <div class="section">
+        <div class="num">8</div>
+        <div>
+          <h2>Changes</h2>
+          <p>If this policy changes, the new version will be published at this address with a new effective date. Changes that affect how data is handled will also be noted in the extension's release notes.</p>
+        </div>
+      </div>
 
-      <h2>Contact</h2>
-      <p>Anda Tech Solutions SRL · <a href="mailto:contact@yallahop.com">contact@yallahop.com</a></p>
+      <div class="section">
+        <div class="num">9</div>
+        <div>
+          <h2>Contact</h2>
+          <p>Anda Tech Solutions SRL · <a href="mailto:contact@yallahop.com">contact@yallahop.com</a></p>
+        </div>
+      </div>
     </div>
   </main>
   <footer>
     <div class="wrap">
-      <span>© 2026 Anda Tech Solutions SRL</span>
+      <span><img src="../../assets/pebble-128.png" alt="">© 2026 Anda Tech Solutions SRL</span>
       <a href="../../">Pebble extensions</a>
       <a href="../../auto-refresh/privacy/">Pebble Auto Refresh privacy</a>
     </div>
