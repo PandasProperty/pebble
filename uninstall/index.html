@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sorry to see you go</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../assets/favicon.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="brand"><img src="../assets/pebble-128.png" alt=""><a href="../">Pebble extensions</a></div>
+      <div class="title">
+        <img id="icon" src="../assets/pebble-128.png" alt="">
+        <div>
+          <div class="kicker">Uninstalled</div>
+          <h1>Sorry to see <span id="name">Pebble</span> go</h1>
+          <p>One click tells us what to fix. No form, no tracking: it opens an email to a person.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="wrap" style="padding-top: 28px">
+      <h2 class="plain" style="margin-top: 0">What was missing?</h2>
+      <div class="reasons" id="reasons"></div>
+
+      <h2 class="plain">Bought Pro?</h2>
+      <p>Your purchase stays yours. Reinstall any time and choose <em>Restore purchase</em> in the extension's settings. If you would rather have a refund, write to <a href="mailto:contact@yallahop.com">contact@yallahop.com</a> with the email you paid with.</p>
+
+      <h2 class="plain">Removed it by accident?</h2>
+      <p><a class="btn" id="reinstall" href="../">Add it back to Chrome</a></p>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">
+      <span><img src="../assets/pebble-128.png" alt="">© 2026 Anda Tech Solutions SRL</span>
+      <a href="../">Pebble extensions</a>
+    </div>
+  </footer>
+  <script>
+    // Static page: nothing is sent anywhere. The query string only picks the wording.
+    (function () {
+      var products = {
+        'autofill': {
+          name: 'Pebble Autofill',
+          icon: '../assets/autofill-128.png',
+          store: 'https://chromewebstore.google.com/detail/pebble-autofill/lemjlmpddnhiaodibhngboibneekknhm',
+          reasons: ["It didn't fill my form correctly", 'I only needed it once', 'The free version was too limited', 'Too expensive', 'I found something else', 'Something else']
+        },
+        'auto-refresh': {
+          name: 'Pebble Auto Refresh',
+          icon: '../assets/auto-refresh-128.png',
+          store: 'https://chromewebstore.google.com/detail/pebble-auto-refresh/fphdpbboalbmfjojfnmeebjphhefpngl',
+          reasons: ["It didn't refresh the way I expected", 'I only needed it once', 'The free version was too limited', 'Too expensive', 'I found something else', 'Something else']
+        }
+      };
+      var params = new URLSearchParams(location.search);
+      var key = params.get('ext');
+      var version = (params.get('v') || '').replace(/[^0-9.]/g, '').slice(0, 12);
+      var p = products[key] || { name: 'Pebble', icon: '../assets/pebble-128.png', store: '../', reasons: products['autofill'].reasons.slice(1) };
+      document.getElementById('name').textContent = p.name;
+      document.getElementById('icon').src = p.icon;
+      document.getElementById('reinstall').href = p.store;
+      var box = document.getElementById('reasons');
+      p.reasons.forEach(function (reason) {
+        var a = document.createElement('a');
+        a.className = 'reason';
+        a.textContent = reason;
+        var subject = p.name + (version ? ' ' + version : '') + ' feedback: ' + reason;
+        var body = 'What happened (a sentence is plenty):\n\n';
+        a.href = 'mailto:contact@yallahop.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        box.appendChild(a);
+      });
+    })();
+  </script>
+</body>
+</html>
