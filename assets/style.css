@@ -82,3 +82,29 @@ footer img { width: 22px; height: 22px; border-radius: 6px; vertical-align: midd
 .reasons { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin: 12px 0 8px; }
 .reason { display: block; border: 1px solid var(--border); background: var(--panel); color: var(--text); text-decoration: none; padding: 12px 16px; border-radius: 12px; font-weight: 600; }
 .reason:hover, .reason:focus-visible { border-color: var(--coral); background: var(--accent-soft); }
+
+/* Product landing pages */
+header.hero .price { font-weight: 600; opacity: 1; }
+header.hero .actions { margin-top: 18px !important; }
+header.hero .btn { background: #fff; color: #c42f35; box-shadow: 0 8px 20px rgba(60,20,10,.18); }
+.steps .section:first-of-type { border-top: 0; }
+.cta { margin: 24px 0 8px; }
+.shots { display: grid; gap: 20px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 12px 0 8px; }
+.shots figure { margin: 0; }
+.shots img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); }
+.shots figcaption { color: var(--muted); font-size: 14px; margin-top: 8px; }
+.plans th, .plans td { width: 50%; padding-right: 16px; }
+.plans ul { margin: 0; padding-left: 18px; }
+.plans li { margin: 4px 0; }
+.faq { margin: 8px 0; }
+.faq details { border-bottom: 1px solid var(--border); padding: 12px 0; }
+.faq details:first-child { border-top: 1px solid var(--border); }
+.faq summary { cursor: pointer; font-weight: 600; }
+.faq details p, .faq details table { margin: 8px 0 0; }
+@media (max-width: 640px) {
+  .glance, .shots { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .plans { font-size: 14px; }
+  .plans th, .plans td { padding-right: 10px; }
+}
